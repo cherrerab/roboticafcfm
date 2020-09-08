@@ -10,11 +10,11 @@ Dentro de este repositorio podrá encontrar los notebooks (\*.ipynb) de los dist
 ## Clonar GitHub
 En caso de requerir importar archivos y/o elementos de este repositorio a un entorno de Google Colab, puede clonarlo directamente mediante:
 
-`! git clone https://github.com/cherrerab/deeplearningfallas.git`
+`! git clone https://github.com/cherrerab/roboticafcfm.git`
 
 Si el repositorio se ha clonado correctamente, notará que en la carpeta de archivos `/content` se habrá creado el directorio `deeplearningfallas`. Para utilizar este directorio dentro de la sesión, utilice el siguiente comando:
 
-`%cd /content/deeplearningfallas`
+`%cd /content/roboticafcfm`
 
 ## Tutorial Numpy
 Numpy es quizás la librería más utilizada en lo que respecta a Python, se utiliza extensamente en la ciencia de datos y, más importante para el curso, en el procesamiento de imágenes. Fundamentalmente, está orientada a la manipulación de arreglos multidimensionales, para lo cual cuenta con estructuras de datos y operaciones especializadas. En este tutorial aprenderá las funcionalidades básicas de esta librería que le permitirán abordar los próximos workshops del curso.
