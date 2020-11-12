@@ -12,7 +12,7 @@ WIN_HEIGHT = 512
 
 # obtener directorio actual
 current_dir = os.getcwd()
-img_dir = os.path.join( current_dir, 'shrek\\bin' )
+img_dir = os.path.join( current_dir, 'shrek/bin' )
 
 # tubería sprite
 pipe_path = os.path.join( img_dir, 'pipe.png' )
