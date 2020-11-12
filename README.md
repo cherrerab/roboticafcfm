@@ -53,3 +53,12 @@ Los algoritmos genéticos (GA) son una heurística de optimización, inspirada e
 
 
 [![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_04/bin/auxvid.png)](https://youtu.be/ag53l1XeMJA)
+
+
+## Neuroevolving of Augmenting Topologies
+Entre los algoritmos más comunes dentro del Machine Learning, se encuantran las ya bastante conocidas Rede Neuronales o Neural Networks (NN) que consisten en arquitecturas bioinspiradas en la forma en que nuestros cerebros procesan información mediante la transmisión paralela y secuencial de señales eléctricas, entre las neuronas. Así, las Redes Neuronales consisten en una red de nodos, generalmente ordenados por capas, que mediante una serie de ponderaciones y conexiones convierten una serie de valores de entrada (`input`) en una serie de valores de salida (`output`).
+
+En este workshop nos concentraremos en el campo del aprendizaje no supervizado y en particular, en el Reinforcement Learning. En el Reinforcement Learning, las Redes Neuronales son entrenadas (ajustan sus parámetros) para resolver una tarea específica mediante prueba y error, de la misma manera en que uno entrena un animal con recompensas ante aciertos y castigos ante equivocaciones. Una implementación directa de esta idea es la Neuroevolución donde los algoritmos evolutivos son combinados con Redes Neuronales para evolucionar una arquitectura de Red Neuronal capaz de cumplir con la tarea objetivo.
+
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cherrerab/roboticafcfm/blob/master/auxiliar_05/workshop_05.ipynb)
