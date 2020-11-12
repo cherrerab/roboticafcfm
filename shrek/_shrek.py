@@ -19,7 +19,7 @@ pipe_path = os.path.join( img_dir, 'pipe.png' )
 PIPE_IMG = cv2.imread( pipe_path, cv2.IMREAD_UNCHANGED )
 
 # background sprite
-bkgr_path = os.path.join( img_dir, 'bg02.png' )
+bkgr_path = os.path.join( img_dir, 'bg.png' )
 BKGR_IMG = cv2.imread( bkgr_path, cv2.IMREAD_UNCHANGED )
 
 # base sprite
@@ -29,7 +29,7 @@ BASE_IMG = cv2.imread( base_path, cv2.IMREAD_UNCHANGED )
 # shrek sprites
 SHREK_IMG = []
 for i in range(16):
-  img_path = os.path.join(img_dir, 'shrek%02d.png' %(i))
+  img_path = os.path.join(img_dir, 'shrek{:02d}.png'.format(i))
   img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
   img = cv2.resize(img, (img.shape[1]*2, img.shape[0]*2))
   SHREK_IMG.append(img)
