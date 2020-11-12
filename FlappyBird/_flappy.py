@@ -184,7 +184,7 @@ class Pipe:
 
 # ------------------------------------------------------------------------------
 # dibujar frame
-def draw_frame(birds, pipes, canvas):
+def draw_frame(birds, pipes):
   canvas = BKGR_IMG.copy()
 
   # dibujar pipes
