@@ -86,8 +86,7 @@ class Shrek:
 
       self.jumping = False
 
-  def draw(self, frame_count):
-    global canvas
+  def draw(self, frame_count, canvas):
 
     # change sprite by frame
     self.img_idx += 1
@@ -112,6 +111,7 @@ class Shrek:
 
     # modificar canvas
     canvas[y1:y2, x1:x2, :] = ROI
+    return canvas
 
 # ------------------------------------------------------------------------------
 # definir clase Pipe
@@ -148,8 +148,7 @@ class Pipe:
         # collide
         return True
 
-  def draw(self):
-    global canvas
+  def draw(self, canvas):
 
     # bottom -------------------------------------------------------------------
 
@@ -175,6 +174,7 @@ class Pipe:
       ROI[:,:,c] = np.multiply(ROI[:,:,c], 1 - alpha) + np.multiply(IMROI[:,:,c], alpha)
 
     canvas[y1:y2, x1:x2, :] = ROI
+    return canvas
 
 
 # ------------------------------------------------------------------------------
@@ -202,8 +202,7 @@ class Base:
     if self.x2 + self.width < 0:
         self.x2 = self.x1 + self.width
 
-  def draw(self):
-    global canvas
+  def draw(self, canvas):
 
     # --------------------------------------------------------------------------
     # rectangle of interest
@@ -252,20 +251,22 @@ class Base:
       ROI[:,:,c] = np.multiply(ROI[:,:,c], 1 - alpha) + np.multiply(IMROI[:,:,c], alpha)
 
     canvas[y1:y2, x1:x2, :] = ROI
+    return canvas
 
 # ------------------------------------------------------------------------------
 # dibujar frame
 def draw_frame(shreks, pipes, base, frame_count):
-  global canvas
   canvas = BKGR_IMG.copy()
 
   # dibujar pipes
   for pipe in pipes:
-    pipe.draw()
+    canvas = pipe.draw(canvas)
 
   # dibujar bird
   for shrek in shreks:
-    shrek.draw(frame_count)
+    canvas = shrek.draw(frame_count, canvas)
 
   # dibujar base
-  base.draw()
+  canvas = base.draw(canvas)
+
+  return canvas
