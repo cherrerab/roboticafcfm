@@ -62,3 +62,5 @@ En este workshop nos concentraremos en el campo del aprendizaje no supervizado y
 
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cherrerab/roboticafcfm/blob/master/auxiliar_05/workshop_05.ipynb)
+
+[![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_05/bin/auxvid_1.png)](https://youtu.be/qForldaNGJ0)   [![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_05/bin/auxvid_2.png)](https://youtu.be/liMUMoEwFmU)
