@@ -121,8 +121,8 @@ def plot_classification_map(model, xlim, ylim, res):
   
   X = np.zeros( (x.size, 2) )
   
-  X[:, 0] = np.reshape(x.flatten(), (-1, 1))
-  X[:, 1] = np.reshape(y.flatten(), (-1, 1))
+  X[:, 0] = x.flatten()
+  X[:, 1] = y.flatten()
 
   # generate the classification map
   Y = model.predict(X)
