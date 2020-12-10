@@ -128,6 +128,6 @@ def plot_classification_map(model, xlim, ylim, res):
   Y = model.predict(X)
   Y_map = np.reshape( Y[:,1], (res, res))
 
-  plt.figure()
+  plt.figure(figsize=(7,7))
   plt.imshow(Y_map, cmap='bwr')
   return
