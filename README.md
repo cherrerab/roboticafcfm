@@ -69,3 +69,5 @@ En este workshop nos concentraremos en el campo del aprendizaje no supervizado y
 En el campo del Aprendizaje Supervizado, los modelos son entrenados para inferir y _aprender_ las _features_ y los patrones contenidos en una colección de datos para desempeñar alguna tarea de clasificación y/o regresión. En este caso, para entrenar los modelos es necesario contar con una serie de datos de entrada `X` con los resultados deseados de estos `Y`, también llamados datos de salida. Para familiarizarnos con la implementación de estos modelos, en este workshop estudiaremos un caso sencillo de clasificación inspirado en el Playground de TensorFlow.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cherrerab/roboticafcfm/blob/master/auxiliar_06/workshop_06.ipynb)
+
+[![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_06/bin/auxvid.png)](https://youtu.be/bX70gwjEUNA)   [![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_06/bin/auxvid_2.png)](https://youtu.be/Y6UnM1NZRuk)
