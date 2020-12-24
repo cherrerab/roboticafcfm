@@ -131,3 +131,58 @@ def plot_classification_map(model, xlim, ylim, res):
   plt.figure(figsize=(7,7))
   plt.imshow(Y_map, cmap='bwr')
   return
+
+# ----------------------------------------------------------------------------
+def plot_img_samples(dataset, index, grid=None,
+                     figsize=(5,5), title=''):
+    """
+    -> None
+    
+    this function concatenates and plot the index samples of the dataset, 
+    following the rows and columns of the grid parameter.
+    
+    :param np.array dataset:
+        dataset containing the image samples.
+        it is assumed a (samples, height, width) shape.
+    :param array-like index:
+        list of the samples indexes to plot.
+    :param tuple grid:
+        (rows, cols) of images to follow in the concatenation.
+        if None, it is assumed only a row of images.
+        
+    :returns:
+        None.
+    """
+    
+    index = np.array( index )
+    
+    rows, cols = grid
+    _, h, w = dataset.shape
+    
+    # verificar que la cantidad de imagenes coincide con el grid
+    assert index.size >= rows*cols
+    
+    # concatenar imágenes
+    img = np.zeros( (rows*h, cols*w) )
+    
+    for i, idx in enumerate(index):
+        
+        # extraer imagen del dataset
+        image = dataset[idx, :, :]
+        image = np.reshape( image, (h, w) )
+        
+        vmin, vmax = np.min(image, axis=None), np.max(image, axis=None)
+        
+        if (vmax - vmin)!=0.0:
+            image = (image - vmin)/(vmax - vmin)
+        else:
+            image = np.zeros_like(image)
+        
+        # agregar imagen a img
+        k, j = i%cols, i//cols
+        img[j*h:(j+1)*h, k*w:(k+1)*w] = image
+        
+    # plotear
+    plt.figure(figsize=figsize)
+    plt.imshow(img, cmap='jet')
+    plt.title(title)
