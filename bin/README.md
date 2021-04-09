@@ -1,4 +1,4 @@
-![banner](bin/banner.png)
+![banner](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/bin/banner.png)
 Este repositorio contiene los talleres prácticos y el material complementario del curso ME4707 Robótica.
 
 ## Google Colab
