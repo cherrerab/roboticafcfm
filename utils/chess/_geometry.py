@@ -249,4 +249,4 @@ def mask_contour(img, contour, scale=1.0):
         
         mask[i, _pos[0]:_pos[-1]] = 1
         
-    return mask
+    return 255*mask
