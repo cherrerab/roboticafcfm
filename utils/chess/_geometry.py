@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import matplotlib.pyplot as plt
 import os
 import numpy as np
 import cv2
@@ -37,7 +38,8 @@ def plot_lines(img, lines, color=(255, 0, 255)):
         
         newImage= cv2.line(newImage, (x1,y1), (x2,y2), color, 2)
     
-    return newImage
+    plt.imshow(newImage)
+    return None
 
 # ----------------------------------------------------------------------------
 # plotear esquinas sobre la imagen
@@ -55,7 +57,8 @@ def plot_corners(img, corners, size=5, color=(255, 0, 255)):
         
         newImage = cv2.circle(newImage, (x, y), size, color, 2 )
         
-    return newImage
+    plt.imshow(newImage)
+    return None
 
 # ----------------------------------------------------------------------------
 # organizar coordenadas espacialmente
