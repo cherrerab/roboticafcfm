@@ -42,4 +42,4 @@ El Scale-Invariant Feature Transform (SIFT) es un algoritmo, desarrollado por D.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cherrerab/roboticafcfm/blob/master/auxiliar_03/workshop_03.ipynb)
 
-[![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_02/bin/auxvid.png)](https://youtu.be/oSbEE02xapE)
+[![Open In Youtube](https://raw.githubusercontent.com/cherrerab/roboticafcfm/master/auxiliar_03/bin/auxvid.png)](https://youtu.be/oSbEE02xapE)
