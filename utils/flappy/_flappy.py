@@ -139,7 +139,7 @@ class Pipe():
         
         self.vel = 3.2
         
-        self.y = np.random.randint()
+        self.y = np.random.randint(100, 300)
         self.gap = 110
         
         self.top = self.y
