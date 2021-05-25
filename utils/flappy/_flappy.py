@@ -134,7 +134,7 @@ class Pipe():
     de la posición y acciones de un Bird.
     """
     
-    def __init__(self, x, y):
+    def __init__(self, x):
         self.x = x
         
         self.vel = 3.2
