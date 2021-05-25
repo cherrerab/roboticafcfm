@@ -73,7 +73,7 @@ def drawImage(canvas, img, pos):
     return out
 
 # -----------------------------------------------------------------------------
-def Bird():
+class Bird():
     """
     clase que contiene los atributos necesarios para mantener un registro
     de la posición y acciones de un Bird.
@@ -128,7 +128,7 @@ def Bird():
         return drawImage(canvas, self.img, (self.y, self.x))
 
 # -----------------------------------------------------------------------------
-def Pipe():
+class Pipe():
     """
     clase que contiene los atributos necesarios para mantener un registro
     de la posición y acciones de un Bird.
