@@ -71,7 +71,7 @@ def drawImage(canvas, img, pos):
     mask = np.dstack([mask, mask, mask, mask])
     
     ret = cv2.bitwise_and(ROI, 255-mask) + cv2.bitwise_and(IMROI, mask)
-    out[ri1:ri2, rj1:rj2, :3] = ret
+    out[ri1:ri2, rj1:rj2, :] = ret
     return out
 
 # -----------------------------------------------------------------------------
