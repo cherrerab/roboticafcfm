@@ -4,12 +4,85 @@ import numpy as np
 import pandas as pd
 
 import matplotlib.pyplot as plt
-from matplotlib import cm
 
 from sklearn.metrics import confusion_matrix
 
 from scipy.stats import kurtosis
 from scipy.stats import skew
+
+from PIL import Image, ImageDraw, ImageFont
+
+# -----------------------------------------------------------------------------   
+def plot_tour_img(coords, tour, img_file):
+    """
+    -> None
+    
+    this functiones generates a .png of the graph of the especified tour.
+    
+    :param np.array coords:
+        arreglo numérico de la forma (ncities, 2) con las coordenadas (x, y)
+        de cada una de las ciudades.
+    :param list tour:
+        arreglo de la forma (ncities, ) con el orden las ciudades que define
+        el recorrido.
+    :param str img_file:
+        path de destino de la imagen .png
+    """
+    padding = 20
+    x = coords[:, 0] + padding
+    y = coords[:, 1] + padding
+
+    xmax, ymax = np.max(x), np.max(y)
+    
+    img = Image.new("RGB", (int(xmax), int(ymax)), color=(255, 255, 255))
+    font = ImageFont.load_default()
+    d = ImageDraw.Draw(img);
+
+    num_cities=len(tour)
+    for i in range(num_cities):
+        j = (i+1)%num_cities
+        city_i = tour[i]
+        city_j = tour[j]
+        x1, y1 = coords[city_i, :]
+        x2, y2 = coords[city_j, :]
+        d.line((int(x1), int(y1), int(x2), int(y2)),fill=(0, 0, 0))
+        d.text((int(x1)+7, int(y1)-5), str(i), font=font, fill=(32, 32, 32))
+
+    for x,y in coords:
+        x, y = int(x), int(y)
+        d.ellipse((x-5, y-5, x+5, y+5), outline=(0, 0, 0), fill=(196, 196, 196))
+
+    del d
+
+    img.save(img_file, 'PNG')
+    print('The plot was saved into the %s file.' % (img_file,))
+    
+# -----------------------------------------------------------------------------   
+def plot_evolution(GA_STATS):
+    """
+    -> None
+    
+    Plotea la evolución del algoritmo genético durante las generaciones.
+    
+    :param DataFrame GA_STATS: DataFrame que contiene las estadísticas.
+    
+    :return: None
+    """
+
+    # plot
+    plt.figure(figsize=(10,6))
+    
+    plt.plot(GA_STATS.index, GA_STATS['Max'], 'b', label='Max')
+    plt.plot(GA_STATS.index, GA_STATS['Min'], 'r', label='Min')
+    plt.plot(GA_STATS.index, GA_STATS['Mean'], 'k:', label='Mean')
+      
+    plt.xlabel('Generation')
+    plt.ylabel('Fitness')
+    plt.legend()
+    
+    plt.show()
+    
+    return None
 
 # ----------------------------------------------------------------------------
 def plot_confusion_matrix(Y_true, Y_pred, target_names,
