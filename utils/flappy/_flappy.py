@@ -51,9 +51,9 @@ def drawImage(canvas, img, pos):
     
     i, j = pos
     
-    if (j >= WIDTH) or (j < 0):
+    if (j >= WIDTH) or (j + width < 0):
         return out
-    if (i >= HEIGHT) or (i < 0):
+    if (i >= HEIGHT) or (i + height < 0):
         return out
     
     # definir ROI
