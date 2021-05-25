@@ -178,6 +178,7 @@ class Pipe():
         """
         canvas = drawImage(canvas, self.top_img, (self.top-self.height, self.x))
         canvas = drawImage(canvas, self.bot_img, (self.bottom, self.x))
+        return canvas
         
 # -----------------------------------------------------------------------------
 def renderFrame(birds, pipes):
