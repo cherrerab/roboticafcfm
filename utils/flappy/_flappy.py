@@ -66,6 +66,8 @@ def drawImage(canvas, img, pos):
     
     ROI = out[ri1:ri2, rj1:rj2, :]
     IMROI = img[i1:i2, j1:j2, :]
+    
+    print(ROI.shape, IMROI.shape)
     mask = IMROI[:, :, 3]
     mask = np.dstack([mask, mask, mask])
     
