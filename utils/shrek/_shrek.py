@@ -213,10 +213,10 @@ class Base:
         self.x1 = int( self.x1 - self.vel )
         self.x2 = int( self.x2 - self.vel )
         
-        if self.x1 + self.width < 0:
+        if self.x1 + self.width <= 0:
             self.x1 = self.x2 + self.width
         
-        if self.x2 + self.width < 0:
+        if self.x2 + self.width <= 0:
             self.x2 = self.x1 + self.width
             
     def draw(self, canvas):
